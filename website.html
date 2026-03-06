@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #c0c9d4;
+    }
+
+    header {
+      background: #1e1e2f;
+      color: white;
+      padding: 25px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 30px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .container {
+      padding: 50px 80px;
+    }
+
+    .book-row {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+      background: rgb(6, 59, 90);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgb(215, 210, 210);
+      overflow: hidden;
+    }
+
+    .book-row img {
+      width: 260px;
+      height: 360px;
+      object-fit: cover;
+    }
+
+    .book-info {
+      padding: 30px;
+    }
+
+    .book-info h2 {
+      margin-top: 0;
+    }
+
+    .book-info p {
+      color: #f7f4f4;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #5a67d8;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sankar Book Hub</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Books</a>
+    <a href="#">Categories</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="book-row">
+    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f">
+    <div class="book-info">
+      <h2>The Silent Pages</h2>
+      <p>A mystery novel that keeps you hooked till the last page. Perfect for thriller lovers.</p>
+      <a class="btn" href="#">Read More</a>
+    </div>
+  </div>
+
+  <div class="book-row">
+    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
+    <div class="book-info">
+      <h2>Think Deep</h2>
+      <p>A self-development book focused on mindset, productivity, and success.</p>
+      <a class="btn" href="#">Read More</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

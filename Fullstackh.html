@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Feedback Form</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom,#cfd9df,#e2b49a);
+}
+
+/* form box */
+.form-container{
+    width:900px;
+    margin:40px auto;
+    background:white;
+    padding:30px 40px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.sub{
+    margin-bottom:25px;
+    color:#444;
+}
+
+/* rating table */
+.rating-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:30px;
+}
+
+.rating-table th{
+    padding:10px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.rating-table td{
+    padding:18px 10px;
+}
+
+.question{
+    width:40%;
+    font-weight:500;
+}
+
+.center{
+    text-align:center;
+}
+
+/* yes no boxes */
+.yn-box{
+    border:2px solid #ccc;
+    border-radius:8px;
+    padding:15px;
+    margin:10px 0 25px 0;
+    display:flex;
+    justify-content:space-around;
+}
+
+.yn-box label{
+    font-size:16px;
+}
+
+/* submit */
+.submit-btn{
+    display:block;
+    margin:20px auto;
+    padding:12px 30px;
+    font-size:18px;
+    background:#2d7ef7;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#1a5fd1;
+}
+
+.thank{
+    text-align:center;
+    margin-top:25px;
+    font-size:18px;
+    color:#333;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h1>Product Feedback Form with Rules</h1>
+<p class="sub">Please rate the following aspects</p>
+
+<table class="rating-table" border="0">
+
+<tr>
+<th></th>
+<th>Very Good</th>
+<th>Good</th>
+<th>Fair</th>
+<th>Poor</th>
+<th>Very Poor</th>
+</tr>
+
+<tr>
+<td class="question">Rate your overall satisfaction with the product</td>
+<td class="center"><input type="radio" name="q1"></td>
+<td class="center"><input type="radio" name="q1"></td>
+<td class="center"><input type="radio" name="q1"></td>
+<td class="center"><input type="radio" name="q1"></td>
+<td class="center"><input type="radio" name="q1"></td>
+</tr>
+
+<tr>
+<td class="question">How easy was it to use the product?</td>
+<td class="center"><input type="radio" name="q2"></td>
+<td class="center"><input type="radio" name="q2"></td>
+<td class="center"><input type="radio" name="q2"></td>
+<td class="center"><input type="radio" name="q2"></td>
+<td class="center"><input type="radio" name="q2"></td>
+</tr>
+
+<tr>
+<td class="question">How would you rate the performance of the product?</td>
+<td class="center"><input type="radio" name="q3"></td>
+<td class="center"><input type="radio" name="q3"></td>
+<td class="center"><input type="radio" name="q3"></td>
+<td class="center"><input type="radio" name="q3"></td>
+<td class="center"><input type="radio" name="q3"></td>
+</tr>
+
+</table>
+
+<h3>Did you encounter any usability issues?</h3>
+<div class="yn-box">
+<label><input type="radio" name="u1"> Yes</label>
+<label><input type="radio" name="u1"> No</label>
+</div>
+
+<h3>Were there any missing features that you expected?</h3>
+<div class="yn-box">
+<label><input type="radio" name="u2"> Yes</label>
+<label><input type="radio" name="u2"> No</label>
+</div>
+
+<h3>Did you experience any performance issues?</h3>
+<div class="yn-box">
+<label><input type="radio" name="u3"> Yes</label>
+<label><input type="radio" name="u3"> No</label>
+</div>
+
+<button class="submit-btn">Submit</button>
+
+<p class="thank">Thank you for taking the time to complete this feedback form!</p>
+
+</div>
+
+</body>
+</html>

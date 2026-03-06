@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Water Tracker</title>
+    <link rel="stylesheet" href="watertrackC.css">
+</head>
+
+<body>
+
+<div class="container">
+ <h1>STAY HYDRATE</h1>
+    <h1>💧Water Tracker💧</h1>
+  
+    “Drink water like it’s your daily medicine — your body will thank you every day.”
+
+
+    <h2 id="goal">Daily Goal: 2000 ml</h2>
+
+    <div class="progress-area">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <h3 id="amount">0 ml</h3>
+
+    <div class="buttons">
+        <button onclick="addWater(250)">+250 ml</button>
+        <button onclick="addWater(500)">+500 ml</button>
+        <button onclick="resetWater()">Reset</button>
+    </div>
+
+    <p id="message"></p>
+
+</div>
+
+<script src="watertrackJ.js"></script>
+</body>
+</html>
