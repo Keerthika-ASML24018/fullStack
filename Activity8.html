@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced JavaScript ES6</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root{ --bg1:#667eea; --bg2:#764ba2; --card:rgba(255,255,255,0.12); --text:#ffffff }
+    body.dark{ --bg1:#0f2027; --bg2:#203a43; --card:rgba(0,0,0,0.4); --text:#eaeaea }
+    body{ margin:0; font-family:Poppins,sans-serif; color:var(--text); background:linear-gradient(135deg,var(--bg1),var(--bg2)); text-align:center }
+
+    .container{ padding:30px }
+    h1{ font-size:2.5rem }
+
+    .card{ background:var(--card); border-radius:20px; padding:20px; width:min(900px,92%); margin:auto; backdrop-filter:blur(10px); box-shadow:0 10px 25px rgba(0,0,0,.3) }
+
+    .grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center }
+    @media(max-width:700px){ .grid{ grid-template-columns:1fr } }
+
+    img{ width:100%; max-width:300px; border-radius:15px; transition:transform .3s }
+
+    button{ padding:10px 15px; border:none; border-radius:20px; cursor:pointer }
+    .btn{ background:#ff7eb3; color:#fff }
+
+    .progress{ width:80%; margin:20px auto; background:#ddd; border-radius:20px; overflow:hidden }
+    .bar{ height:15px; width:0%; background:#22c55e; transition:.5s }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 ES6 Plant Project</h1>
+
+    <button class="btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+    <div class="card">
+      <div class="grid">
+        <div>
+          <p>✔ Arrow Functions</p>
+          <p>✔ Promises</p>
+          <p>✔ Async/Await</p>
+          <p>✔ Destructuring</p>
+
+          <button class="btn" onclick="growPlant()">Grow Plant 🌱</button>
+        </div>
+
+        <div>
+          <img id="plant" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+        </div>
+      </div>
+
+      <div class="progress">
+        <div id="bar" class="bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleTheme = () => document.body.classList.toggle('dark');
+
+    // Plant grow animation + progress bar
+    const growPlant = async () => {
+      const bar = document.getElementById('bar');
+      const plant = document.getElementById('plant');
+
+      for(let i=0;i<=100;i+=10){
+        await new Promise(r=>setTimeout(r,200));
+        bar.style.width = i + '%';
+        plant.style.transform = `scale(${1 + i/200})`;
+      }
+      alert("🌿 Plant fully grown!");
+    };
+
+    // ES6 demo
+    const student = { name:"Keerthu", skill:"JS" };
+    const { name, skill } = student;
+    console.log(`${name} learning ${skill}`);
+  </script>
+</body>
+</html>
