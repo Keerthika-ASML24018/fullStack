@@ -1,0 +1,182 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brown Theme User System</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background-color: #EFEBE9;
+    font-family: Arial;
+}
+
+/* Card Style */
+.box {
+    width: 320px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 20px;
+    background: #A1887F;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: #4E342E;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background: #4E342E;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 95%;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #3E2723;
+}
+
+.link {
+    color: #4E342E;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Hide sections */
+.section {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- REGISTER -->
+<div id="registerSection" class="box">
+    <h2>Register</h2>
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="register()">Register</button>
+    <p id="regMsg"></p>
+    <p class="link" onclick="showLogin()">Already have account? Login</p>
+</div>
+
+<!-- LOGIN -->
+<div id="loginSection" class="box section">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="loginMsg"></p>
+    <p class="link" onclick="showRegister()">Create new account</p>
+    <a href="task11.html">Go to Dashboard</a>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardSection" class="container mt-5 section">
+    <h2 class="text-center">Dashboard</h2>
+
+    <div class="text-center mt-3">
+        <button class="btn btn-dark" onclick="toggleData()">Show / Hide Data</button>
+        <button class="btn btn-secondary" onclick="logout()">Logout</button>
+    </div>
+
+    <div id="dataBox" class="card p-3 mt-4">
+        <h4>User Data</h4>
+        <p id="dName"></p>
+        <p id="dEmail"></p>
+    </div>
+</div>
+
+<script>
+
+// Show Sections
+function showRegister() {
+    registerSection.style.display = "block";
+    loginSection.style.display = "none";
+}
+
+function showLogin() {
+    registerSection.style.display = "none";
+    loginSection.style.display = "block";
+}
+
+// Register
+function register() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+
+    if (name === "" || email === "" || pass === "") {
+        regMsg.innerHTML = "All fields required!";
+        return;
+    }
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", pass);
+
+    regMsg.innerHTML = "Registered Successfully!";
+    showLogin();
+}
+
+// Login
+function login() {
+    let email = document.getElementById("loginEmail").value;
+    let pass = document.getElementById("loginPass").value;
+
+    let storedEmail = localStorage.getItem("email");
+    let storedPass = localStorage.getItem("password");
+
+    if (email === storedEmail && pass === storedPass) {
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("dashboardSection").style.display = "block";
+
+        document.getElementById("dName").innerText = "Name: " + localStorage.getItem("name");
+        document.getElementById("dEmail").innerText = "Email: " + storedEmail;
+
+    } else {
+        loginMsg.innerHTML = "Invalid Login!";
+    }
+}
+
+// Toggle Data (DOM)
+function toggleData() {
+    let box = document.getElementById("dataBox");
+
+    if (box.style.display === "none") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
+
+// Logout
+function logout() {
+    document.getElementById("dashboardSection").style.display = "none";
+    showLogin();
+}
+
+// Default load
+showRegister();
+
+</script>
+
+</body>
+</html>
+```
