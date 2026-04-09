@@ -1,0 +1,111 @@
+
+<!-- HTML5 
+1.	HTML tags like <header> <footer> <article> <section> and <side> are available to improve the structure of web documents. 
+2.	Supports embedding of audio and video using <audio> and <video> tags. 
+3.	Supports Scalable Vector Graphics using the <SVG> tag. 
+4.	HTML5 allows users to mark up a photo using <figure> element and define its caption with <figcaption> tag. 
+CSS3 
+1.	Developers can create shadow effects with Box Shadow and Text Shadow. 
+2.	Developers can easily round the corners of an image and block elements. 
+3.	Developers can use rbga colours to reduce the opacity of the background and elements. 
+4.	Developers can animate any object on the web page without any need to use Flash.  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 & CSS3 Example</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: rgba(200, 200, 255, 0.5);
+        }
+
+        header {
+            background-color: rgb(7, 122, 82);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px gray;
+        }
+
+        img {
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(10, 83, 19);
+            animation: jump 10s infinite;
+        }
+
+        @keyframes jump {
+            from {margin-left: 0px;}
+            to {margin-left: 900px;}
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Website</h1>
+</header>
+<section>
+    <article>
+        <h2>HTML5 Features</h2>
+        <p>This is an example of article and section tags.</p>
+    </article>
+
+    <figure>
+        <img src="https://img.freepik.com/free-photo/weather-effects-composition_23-2149853295.jpg">
+        <figcaption>RAIN image</figcaption>
+    </figure>
+
+    <audio controls>
+        <source src="C:\Users\Yukesh P\Downloads\dragon-studio-relaxing-rain-444802.mp3" type="audio/mp3">
+    </audio>
+
+    <br><br>
+
+    <video width="600" controls>
+        <source src="C:\Users\Yukesh P\Downloads\11722-231759069.mp4" type="video/mp4">
+    </video>
+
+    <h3>Animation Box</h3>
+    <div class="box"></div>
+
+</section>
+
+<footer>
+    <p>Footer Section</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
